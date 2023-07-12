@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&family=Open+Sans&family=Playfair+Display&family=Roboto+Condensed&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    color: #000;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+  }

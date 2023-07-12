@@ -1,0 +1,166 @@
+#myCanvasContainer {
+	background: #fff;
+}
+
+.skillContainer {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .skillHeading {
+    display: flex;
+    margin-top: 8vh;
+    width: 70vw;
+    height: 15vh;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #skillText {
+    display: inline;
+    font-family: "Archivo Black", sans-serif;
+    font-size: 75px;
+    letter-spacing: 1vw;
+  }
+
+  .skillBox{
+    width: 70vw;
+    height: 70vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  * {
+    box-sizing: content-box;
+  }
+  
+  .root {
+    --bg-color: #003554;
+    --bg-color-light: #fff;
+    --box-shadow-color: rgba(19, 51, 55, 0.75);
+  }
+  
+  .tiles-card {
+    width: 135px;
+    height: 135px;
+    background: var(--bg-color-light);
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0px 26px rgba(0, 0, 0, 0.09);
+    border-radius: 8px;
+    transition: all 0.3s ease-out;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px;
+  }
+  
+  .tiles-overlay {
+    width: 78px;
+    height: 78px;
+    position: absolute;
+    border-radius: 50%;
+    background: var(--bg-color);
+    margin: auto;
+    z-index: 0;
+    transition: transform 0.3s ease-out;
+  }
+  
+  .tiles-circle {
+    width: 91px;
+    height: 91px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease-out;
+    margin: auto;
+  }
+  
+  .tiles-circle::after {
+    content: "";
+    width: 78px;
+    height: 78px;
+    display: block;
+    position: absolute;
+    background: var(--bg-color);
+    border-radius: 50%;
+    transition: opacity 0.3s ease-out;
+  }
+  
+  .tiles-circle img {
+    height: 45px;
+    margin-top: 5px;
+    z-index: 10000;
+    transform: scale(1) translateZ(0) rotateY(0deg);
+    transition: all 0.3s ease-out;
+    position: static;
+  }
+  
+  .tiles-circle p {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0) translateZ(0) rotateY(180deg);
+    transition: all 0.3s ease-out;
+    position: absolute;
+    z-index: 10000;
+    cursor: default;
+  }
+  
+  .tiles-card:hover {
+    transform: translateY(-5px) scale(1.005) translateZ(0);
+    box-shadow: 0 0px 36px rgba(0, 0, 0, 0.11), 0 0px 46px var(--box-shadow-color);
+  }
+  .tiles-card:hover .tiles-overlay {
+    transform: scale(4) translateZ(0);
+  }
+  .tiles-card:hover .tiles-circle {
+    border-color: var(--bg-color-light);
+    background: var(--bg-color);
+  }
+  .tiles-card:hover .tiles-circle::after {
+    background: var(--bg-color-light);
+  }
+  .tiles-card:hover .tiles-circle img {
+    opacity: 0;
+    transform: scale(0) translateZ(0) rotateY(180deg);
+    position: absolute;
+  }
+  .tiles-card:hover .tiles-circle p {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1) translateZ(0) rotateY(0deg);
+    position: static;
+  }
+
+  @media only screen and (max-width: 600px) {
+
+
+    .skillContainer{
+      height: auto;
+    }
+    .skillBox{
+      width: 100vw;
+      height: auto;
+    }
+
+    .tiles-card{
+      width: 115px;
+      height: 115px;
+    }
+
+    #skillText {
+      font-size: 50px;
+    }
+  }
