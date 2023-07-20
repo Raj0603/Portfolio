@@ -13,7 +13,7 @@
 .contactHeading{
     display: flex;
     margin-top: 5vh;
-    font-family: "Archivo Black", sans-serif;
+    /* font-family: "Archivo Black", sans-serif; */
     width: 70vw;
     height: 15vh;
     font-weight: bold;
@@ -84,15 +84,8 @@
     text-align: center;
     
 }
-.contactDesc > h1{
-    font-family: 'Archivo Black', sans-serif;
-}
-.contactDesc > p{
-    font-family: 'Bellefair', serif;
 
-}
 .contactFormDesc > h2{
-    font-family: 'Cookie', cursive;
     font-size: 35px;
     margin-bottom: 10px;
 }
