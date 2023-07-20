@@ -13,7 +13,7 @@
 .contactHeading{
     display: flex;
     margin-top: 5vh;
-    /* font-family: "Archivo Black", sans-serif; */
+    font-family: "Archivo Black", sans-serif;
     width: 70vw;
     height: 15vh;
     font-weight: bold;
@@ -47,7 +47,13 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    height: 15vh;
+    height: 20vh;
+}
+
+.contactDesc > h1{
+  /* font-size: xx-large; */
+  font-weight: bolder;
+  margin-bottom: 10px;
 }
 
 .contactSocial{
@@ -277,5 +283,6 @@
   width: auto;
   height: 55vh;
 }
+
 
 }
