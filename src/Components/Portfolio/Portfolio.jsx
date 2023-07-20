@@ -1,5 +1,6 @@
 import React from "react";
 import "./Portfolio.css";
+import "animate.css";
 import ecom from "../../assets/f4.jpg";
 import rb from "../../assets/f9.jpg";
 import hack from "../../assets/f6.jpg";
