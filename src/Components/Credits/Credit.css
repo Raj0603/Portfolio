@@ -1,5 +1,6 @@
 .credit-container{
-    height: 2vh;
+    height: 5vh;
+    background-color: #00a6fb;
     width: 100vw;
     display: flex;
     margin: 0px;
@@ -10,9 +11,32 @@
     font-size: xx-small;
 }
 
+#bthb{
+    height: 5vh;
+    width: 10vw;
+    background-color: #00a6fb;
+    border: none;
+    position: fixed;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: 1px solid black;
+  outline-offset: -1px;
+    top: 45vh;
+    left: 45vw;
+}
+
+#bthb::after{
+
+    transform: translate(5px, 5px);
+}
+
 
 @media only screen and (max-width: 600px){
     .credit-container{
-        display: none;
+        height: 10vh;
+    }
+    #bthb{
+        width: 40vw;
+        left: 33vw;
     }
 }

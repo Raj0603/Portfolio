@@ -2,6 +2,7 @@ import "./ContactPage.css";
 import emailjs from "@emailjs/browser";
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import sentImg from "../../assets/sent.jpg"
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 
 class ContactPage extends React.Component {
@@ -9,7 +10,19 @@ class ContactPage extends React.Component {
     name: "",
     email: "",
     message: "",
-  };  
+  };
+
+  constructor() {
+    super();
+
+    this.state = {
+      sent: false,
+    };
+  }
+
+  sendMsg() {
+    this.setState({ sent: !this.state.sent });
+  }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -36,9 +49,14 @@ class ContactPage extends React.Component {
   }
   handleChange = (param, e) => {
     this.setState({ [param]: e.target.value });
+
   };
 
   render() {
+
+    let btn_class1 = this.state.sent ? "afterSent" : "beforeSent";
+    let btn_class2 = this.state.sent ? "beforeSent" : "afterSent";
+    
     return (
       <>
         <div className="contactContainer" id="ContactPage">
@@ -58,45 +76,45 @@ class ContactPage extends React.Component {
               <div className="contactSocial">
                 <div className="socialCard">
                   <a href="mailto:rajsrivastav0603@gmail.com">
-                  <FontAwesomeIcon icon={faEnvelope} />
-                  <h3>Email</h3>
-                  <span id="cmail">rajsrivastav0603@gmail.com</span>
+                    <FontAwesomeIcon icon={faEnvelope} />
+                    <h3>Email</h3>
+                    <span id="cmail">rajsrivastav0603@gmail.com</span>
                   </a>
                 </div>
                 <div className="socialCard">
                   <a href="tel:+918421843544">
-                  <FontAwesomeIcon icon={faPhone} />
-                  <h3>Phone</h3>
-                  <span>8421843544</span>
+                    <FontAwesomeIcon icon={faPhone} />
+                    <h3>Phone</h3>
+                    <span>8421843544</span>
                   </a>
                 </div>
                 <div className="socialCard">
                   <a href="https://www.github.com/Raj0603" target="_blank">
-
-
-                  <FontAwesomeIcon icon={faEnvelope} />
-                  <h3>Github</h3>
-                  <span>Raj0603</span>
+                    <FontAwesomeIcon icon={faEnvelope} />
+                    <h3>Github</h3>
+                    <span>Raj0603</span>
                   </a>
                 </div>
                 <div className="socialCard">
-                  <a href="https://www.linkedin.com/in/rajsrivastavb4a8221b1" target="_blank">
-                  <FontAwesomeIcon icon={faEnvelope} />
-                  <h3>LinkedIn</h3>
+                  <a
+                    href="https://www.linkedin.com/in/rajsrivastavb4a8221b1"
+                    target="_blank"
+                  >
+                    <FontAwesomeIcon icon={faEnvelope} />
+                    <h3>LinkedIn</h3>
                     <span>LinkedIn</span>
                   </a>
                 </div>
               </div>
             </div>
-            <div className="contactRight">
-              
-
+            <div className="contactRight" id={btn_class1}>
               <form id="contactform" onSubmit={this.handleSubmit.bind(this)}>
                 <input
                   className="inp"
                   type="text"
                   placeholder="Name"
                   name="user_name"
+                  required
                   value={this.state.name}
                   onChange={this.handleChange.bind(this, "name")}
                 />
@@ -105,24 +123,32 @@ class ContactPage extends React.Component {
                   type="text"
                   placeholder="Email"
                   name="user_email"
+                  required
                   value={this.state.email}
                   onChange={this.handleChange.bind(this, "email")}
                 />
                 <textarea
                   className="inp"
                   placeholder="Message"
+                  required
                   value={this.state.message}
                   onChange={this.handleChange.bind(this, "message")}
                 />
 
-                <button
-                  id="submit"
-                  type="submit"
-                >
-                Send
+                <button className="submit" type="submit" onClick={this.sendMsg.bind(this)}>
+                  Send
                 </button>
               </form>
-              
+            </div>
+
+            <div className="contactRight" id={btn_class2} >
+              <div className="sendBox">
+
+              <span id="ymss">Your message has been sent successfully</span>
+              <img src={sentImg} alt="" id="sentImg"/>
+              <button className="submit" onClick={this.sendMsg.bind(this)}> Send Another</button>
+
+              </div>
             </div>
           </div>
         </div>

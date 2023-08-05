@@ -1,7 +1,9 @@
 import "./Credit.css";
+import { Link } from "react-router-dom";
 
 const Credit = () => {
   return (
+    <>
     <div className="credit-container">
       <span className="creditSpan">
         <a href="https://www.freepik.com/free-vector/portfolio-management-previous-projects-samples-works-catalog-skills-presentation-successful-graphic-designer-web-developer-cartoon-character_11667016.htm#query=portfolio&position=7&from_view=search&track=sph">
@@ -47,6 +49,10 @@ const Credit = () => {
       </span>
       <span></span>
     </div>
+    <Link to="/">
+    <button id="bthb">Back to Home</button>
+    </Link>
+    </>
   );
 };
 

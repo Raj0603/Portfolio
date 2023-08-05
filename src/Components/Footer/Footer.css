@@ -1,0 +1,11 @@
+.Footer-Container{
+    height: 5vh;
+    background-color: #00a6fb;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#cls{
+    font-weight: bolder;
+    margin: 0 5px 0 5px;
+}

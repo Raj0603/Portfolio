@@ -3,7 +3,7 @@ import AboutPage from '..//AboutPage/AboutPage'
 import ContactPage from '..//ContactPage/ContactPage'
 import Portfolio from '..//Portfolio/Portfolio'
 import TagCloud from '../SkillsPage/Skills'
-import Credit from '../Credits/Attribute'
+import Footer from '../Footer/Footer'
 
 const AllPage = () =>{
     return(
@@ -15,7 +15,7 @@ const AllPage = () =>{
             {/* <Resume/> */}
             <Portfolio/>
             <ContactPage/>
-            <Credit/>
+            <Footer/>
         </>
     )
 }
