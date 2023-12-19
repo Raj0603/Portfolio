@@ -1,6 +1,6 @@
 import "./AboutPage.css";
 import profilepic from "../../assets/wd.jpg";
-import cv from "../../assets/Raj Srivastav.pdf"
+import cv from "../../assets/Raj srivastav Resume.pdf"
 
 const AboutPage = () => {
 
